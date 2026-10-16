@@ -27,3 +27,18 @@ CLIENT(**id_client**, nom)
 COMMANDE(**id_commande**, date_commande, #id_client?)
 
 LIGNE_COMMANDE(**#id_commande, #id_plat**, quantite)
+## Étape 5 — Serveurs et tables *(nouveau : SERVEUR, TABLE_SALLE, modifié : COMMANDE)*
+
+CATEGORIE(**id_categorie**, nom)
+
+PLAT(**id_plat**, nom, prix, #id_categorie)
+
+CLIENT(**id_client**, nom)
+
+SERVEUR(**id_serveur**, nom)
+
+TABLE_SALLE(**num_table**)
+
+COMMANDE(**id_commande**, date_commande, #id_client?, #id_serveur, #num_table?)
+
+LIGNE_COMMANDE(**#id_commande, #id_plat**, quantite)
