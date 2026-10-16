@@ -42,7 +42,23 @@ TABLE_SALLE(**num_table**)
 COMMANDE(**id_commande**, date_commande, #id_client?, #id_serveur, #num_table?)
 
 LIGNE_COMMANDE(**#id_commande, #id_plat**, quantite)
-## Étape 6 — Les paiements *(nouveau : MODE_PAIEMENT, PAIEMENT)*
+## Étape 6 — Les paiements *(modifié : COMMANDE)*
+
+CATEGORIE(**id_categorie**, nom)
+
+PLAT(**id_plat**, nom, prix, #id_categorie)
+
+CLIENT(**id_client**, nom)
+
+SERVEUR(**id_serveur**, nom)
+
+TABLE_SALLE(**num_table**)
+
+COMMANDE(**id_commande**, date_commande, #id_client?, #id_serveur, #num_table?, mode_paiement, montant_paye)
+
+LIGNE_COMMANDE(**#id_commande, #id_plat**, quantite)
+
+#  Étape 7 : Les prix changent *(modification : LIGNE_COMMANDE, nouveau : HISTORIQUE_PRIX)*
 
 CATEGORIE(**id_categorie**, nom)
 
@@ -56,8 +72,10 @@ TABLE_SALLE(**num_table**)
 
 COMMANDE(**id_commande**, date_commande, #id_client?, #id_serveur, #num_table?)
 
-LIGNE_COMMANDE(**#id_commande, #id_plat**, quantite)
+LIGNE_COMMANDE(**#id_commande, #id_plat**, quantite, prix_unitaire)
 
 MODE_PAIEMENT(**id_mode**, nom)
 
 PAIEMENT(**id_paiement**, #id_commande, #id_mode, montant, reference_txn?)
+
+HISTORIQUE_PRIX(**id_historique**, #id_plat, prix, date_debut, date_fin?)
