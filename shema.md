@@ -7,3 +7,12 @@ PLAT(**id_plat**, nom, prix)
 CATEGORIE(**id_categorie**, nom)
 
 PLAT(**id_plat**, nom, prix, #id_categorie)
+## Étape 3 — Les commandes *(nouveau : COMMANDE, LIGNE_COMMANDE)*
+
+CATEGORIE(**id_categorie**, nom)
+
+PLAT(**id_plat**, nom, prix, #id_categorie)
+
+COMMANDE(**id_commande**, date_commande)
+
+LIGNE_COMMANDE(**#id_commande, #id_plat**, quantite)
